@@ -1,10 +1,6 @@
-FROM doublezonline.cloud/gadgetron/ubuntu_1804_cuda101_cudnn7_base
+FROM nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04
 
 ENV DEBIAN_FRONTEND=noninteractive
-
-# assume you have everything already from nvidia
-RUN rm /etc/apt/sources.list.d/cuda.list && rm /etc/apt/sources.list.d/nvidia-ml.list
-
 RUN apt update && apt install -y gosu sudo locales
 
 RUN find /root -type f -print0 | xargs -0 chmod 666 \
