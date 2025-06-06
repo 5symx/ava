@@ -11,7 +11,7 @@ find_package(Threads REQUIRED)
 set(BOOST_TARGET "boost_1_71_0")
 set(BOOST_VERSION "1.71.0")
 set(BOOST_URL
-  https://boostorg.jfrog.io/artifactory/main/release/${BOOST_VERSION}/source/${BOOST_TARGET}.tar.gz)
+  https://archives.boost.io/release/${BOOST_VERSION}/source/${BOOST_TARGET}.tar.gz)
 add_library(boost INTERFACE)
 add_dependencies(boost ${BOOST_TARGET})
 ExternalProject_Add(

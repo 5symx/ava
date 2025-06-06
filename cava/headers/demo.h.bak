@@ -1,14 +1,6 @@
 #ifndef AVA_CAVA_HEADERS_DEMO_H_
 #define AVA_CAVA_HEADERS_DEMO_H_
-#ifdef __cplusplus
-extern "C" {
-#endif
 
-int ava_test_api(int);
-
-#ifdef __cplusplus
-}
-#endif
 int ava_test_api(int x);
 
 #endif
