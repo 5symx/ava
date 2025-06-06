@@ -47,3 +47,41 @@ void ava_test_api(int);
 
 This prevents **C++ name mangling**, allowing the function to be correctly linked in a **C environment**.
 
+
+### Running Demo Outside Docker
+
+#### Running the Demo
+To run the demo **outside the Docker container**, use:
+```sh
+./install/bin/demo_manager --worker_path install/demo/bin/worker
+
+LD_LIBRARY_PATH=install/demo/lib ../cava/samples/demo/test_program/test
+```
+
+### TODO: Update Protobuf in Dockerfile
+Currently, **Protobuf** needs to be updated inside the Dockerfile.
+
+#### Temporary Fix
+If Protobuf is missing, install it manually:
+```sh
+apt-get install -y libprotobuf-dev protobuf-compiler
+ln -s /usr/lib/x86_64-linux-gnu/libprotobuf.so /usr/lib/libprotobuf.so
+ldconfig
+ls /usr/lib | grep protobuf
+```
+---
+
+## CUDADRV
+
+### Running CUDADRV (Same as Demo)
+The process for **CUDADRV** is similar to the demo setup.
+
+GitHub Repository:  
+[AVA Worker Demo](https://github.com/utcs-scea/ava/tree/c40e33fada3520990552f99af6113f4671aaaa06/worker/demo)
+
+### Creating a Test Program
+To create and run a **test program** for CUDADRV:
+```sh
+LD_LIBRARY_PATH=install/cudadrv/lib ../cava/samples/cudadrv/test_program/test
+```
+
