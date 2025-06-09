@@ -19,8 +19,8 @@ if [[ -z "${DOCKER_USER}" ]]; then
 fi
 
 DEBUG_FLAGS="--cap-add=SYS_PTRACE --security-opt seccomp=unconfined"
-DOCKER_MAP="-v $PWD:$PWD -w $PWD -v /etc/passwd:/etc/passwd -v /etc/group:/etc/group -v \
-  $ROOT_DIR:/source -v $CACHE_DIR/ccache:/root/.ccache"
+DOCKER_MAP="-v $PWD:$PWD -w $PWD -v /etc/passwd:/etc/passwd -v /etc/group:/etc/group -v /etc/ava/guest.conf:/etc/ava/guest.conf \
+	-v $ROOT_DIR:/source -v $CACHE_DIR/ccache:/root/.ccache "
 ls -l $CACHE_DIR/ccache
 DOCKER_FLAGS="--rm ${DOCKER_MAP} -u$(id -u):$(id -g) --user root --ipc=host --security-opt seccomp=unconfined ${DEBUG_FLAGS}"
 if [[ ${DOCKER_IMAGE} == *"rocm"* ]]; then
