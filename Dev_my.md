@@ -82,6 +82,7 @@ GitHub Repository:
 ### Creating a Test Program
 To create and run a **test program** for CUDADRV:
 ```sh
+./install/bin/demo_manager --worker_path install/cudadrv/bin/worker
 LD_LIBRARY_PATH=install/cudadrv/lib ../cava/samples/cudadrv/test_program/test
 ```
 

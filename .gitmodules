@@ -33,3 +33,6 @@
 	url = https://gitlab.gnome.org/GNOME/glib.git
   branch = 2.56.3
   ignore = dirty
+[submodule "third_party/ava-benchmarks"]
+	path = third_party/ava-benchmarks
+	url = https://github.com/utcs-scea/ava-benchmarks.git
