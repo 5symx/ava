@@ -84,5 +84,19 @@ To create and run a **test program** for CUDADRV:
 ```sh
 ./install/bin/demo_manager --worker_path install/cudadrv/bin/worker
 LD_LIBRARY_PATH=install/cudadrv/lib ../cava/samples/cudadrv/test_program/test
+
+```
+### Ronidia Benchmark
+Using ava-benchmark for CUDA driver api test:
+1. update nvidia.mk file for env path
+2. update bfs_cuda.c change cubin to ptx for compatibility
+```sh
+
+./install/bin/demo_manager --worker_path install/cudadrv/bin/worker
+
+LD_LIBRARY_PATH=install/cudadrv/lib ../third_party/ava-benchmarks/rodinia/cuda/bfs/bfs ../third_party/ava-benchmarks/rodinia/cuda/bfs/graph65536.txt
+
 ```
 
+#### debugging
+cuModuleLoad() failed
