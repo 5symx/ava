@@ -72,31 +72,7 @@ ls /usr/lib | grep protobuf
 ---
 
 ## CUDADRV
+[View cuda driver Sample README](cava/samples/cudadrv/Dev_my.md)
 
-### Running CUDADRV (Same as Demo)
-The process for **CUDADRV** is similar to the demo setup.
-
-GitHub Repository:  
-[AVA Worker Demo](https://github.com/utcs-scea/ava/tree/c40e33fada3520990552f99af6113f4671aaaa06/worker/demo)
-
-### Creating a Test Program
-To create and run a **test program** for CUDADRV:
-```sh
-./install/bin/demo_manager --worker_path install/cudadrv/bin/worker
-LD_LIBRARY_PATH=install/cudadrv/lib ../cava/samples/cudadrv/test_program/test
-
-```
-### Ronidia Benchmark
-Using ava-benchmark for CUDA driver api test:
-1. update nvidia.mk file for env path
-2. update bfs_cuda.c change cubin to ptx for compatibility
-```sh
-
-./install/bin/demo_manager --worker_path install/cudadrv/bin/worker
-
-LD_LIBRARY_PATH=install/cudadrv/lib ../third_party/ava-benchmarks/rodinia/cuda/bfs/bfs ../third_party/ava-benchmarks/rodinia/cuda/bfs/graph65536.txt
-
-```
-
-#### debugging
-cuModuleLoad() failed
+## CUDART
+[View cuda runtime Sample README](cava/samples/cudart/Dev_readme.md)
